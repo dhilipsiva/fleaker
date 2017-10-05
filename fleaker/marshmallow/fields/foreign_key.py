@@ -52,7 +52,7 @@ class ForeignKeyField(fields.Integer, FleakerFieldMixin):
         """Grab the ID value off the Peewee model so we serialize an ID back.
         """
         # this might be an optional field
-        if value and hasattar(value, 'id'):
+        if value and hasattr(value, 'id'):
             value = value.id
 
         return super(ForeignKeyField, self)._serialize(value, attr, obj)
